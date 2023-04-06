@@ -1,0 +1,97 @@
+body {
+  font-family: arial, sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  font-style: normal;
+
+  background-color: rgb(230, 230, 230);
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: #000;
+  margin: 10px;
+}
+h2 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 35x;
+}
+
+img {
+  /* prvi */
+  max-width: 400px;
+  width: 400px;
+  height: 400px;
+  border: 5px solid blue;
+}
+a {
+  text-decoration: none;
+}
+
+a:link {
+  color: blue;
+}
+a:hover {
+  color: yellow;
+}
+a:active {
+  color: green;
+}
+a:visited {
+  color: red;
+}
+div h2 {
+  color: blue;
+}
+div > ol {
+  background-color: green;
+}
+main > div {
+  background-color: lightcoral;
+}
+div ~ p {
+  color: blueviolet;
+}
+.ordered-list {
+  color: white;
+}
+.ordered-list li:first-child {
+  font-size: 25px;
+}
+.ordered-list li:last-child {
+  font-size: 30px;
+}
+.ordered-list li:nth-child(3) {
+  font-size: 35px;
+}
+
+#unordered-list {
+  color: darkblue;
+}
+#unordered-list li:first-of-type {
+  font-size: 25px;
+}
+#unordered-list li:last-of-type {
+  font-size: 30px;
+}
+
+.image-holder {
+  width: 100%;
+  height: 400px;
+
+  background-color: inherit;
+  background-image: url("images/image-2.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* drugi */
+  opacity: 0.7;
+}
+
+footer {
+  /* treci */
+  float: right;
+}
