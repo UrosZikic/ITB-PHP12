@@ -1,0 +1,11 @@
+div {
+  background-color: blanchedalmond;
+  border: 2px solid black;
+  width: 200px;
+  height: 200px;
+}
+#d2 {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
