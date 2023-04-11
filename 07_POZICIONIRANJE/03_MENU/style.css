@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.topbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+.topbar ul {
+  overflow: hidden;
+  list-style-type: none;
+}
+
+.topbar ul li {
+  float: left;
+  width: 25%;
+  border: 1px solid aquamarine;
+  text-align: center;
+  background-color: brown;
+}
+.topbar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+  font-size: 18px;
+}
+.topbar ul li a:hover {
+  background-color: chocolate;
+}
+/* body {
+  padding-top: 40px;
+} */
+.red {
+  position: relative;
+  top: 50px;
+  overflow: hidden;
+}
+.red aside {
+  float: left;
+  width: 30%;
+
+  background-color: purple;
+}
+.red aside ul {
+  list-style-type: none;
+}
+.red aside ul li {
+  border: 1px solid aquamarine;
+  text-align: center;
+  background-color: darkgoldenrod;
+}
+.red aside ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+  font-size: 18px;
+}
+.red aside ul li a:hover {
+  background-color: darkorange;
+}
+
+.red section {
+  float: left;
+  width: 70%;
+  background-color: burlywood;
+  padding: 20px;
+}
+
+/* padajuci meni */
+.dropdown {
+  display: none;
+}
+.topbar li:last-child:hover .dropdown {
+  display: block;
+}
