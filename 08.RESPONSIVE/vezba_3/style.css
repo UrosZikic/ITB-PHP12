@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 .row {
   width: 100%;
@@ -13,77 +15,69 @@
   width: 100%;
 }
 
-@media only screen and (min-width: 600px) {
-  .col-t-1 {
-    width: calc(100% / 12);
-  }
-  .col-t-2 {
-    width: 16.66%;
-  }
-  .col-t-3 {
-    width: calc(25%);
-  }
-  .col-t-4 {
-    width: calc(100% / 12 * 4);
-  }
-  .col-t-5 {
-    width: calc(100% / 12 * 5);
-  }
-
-  .col-t-6 {
-    width: calc(100% / 12 * 6);
-  }
-
-  .col-t-7 {
-    width: calc(100% / 12 * 7);
-  }
-  .col-t-8 {
-    width: calc(100% / 12 * 8);
-  }
-
-  .col-9-t {
-    width: calc(100% / 12 * 9);
-  }
-  .col-t-10 {
-    width: calc(100% / 12 * 10);
-  }
-  .col-t-11 {
-    width: calc(100% / 12 * 11);
-  }
-  .col-t-12 {
-    width: 100%;
-  }
+.title {
+  background-color: aqua;
+  padding: 10px 0px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
 }
 
-@media only screen and (min-width: 1000px) {
-  .col-1 {
-    width: calc(100% / 12);
-  }
-  .col-2 {
-    width: calc(100% / 6);
-  }
-  .col-3 {
-    width: calc(25%);
-  }
-  .col-4 {
-    width: calc(100% / 12 * 4);
-  }
-  .col-5 {
-    width: calc(100% / 12 * 5);
-  }
+.list-container ul li {
+  width: 100%;
+}
 
-  .col-6 {
-    width: calc(100% / 12 * 6);
-  }
+.list-container ul li a {
+  display: block;
+  width: 100%;
+  padding: 14px 10px;
+  background-color: rgb(0, 225, 255);
 
-  .col-7 {
-    width: calc(100% / 12 * 7);
-  }
-  .col-8 {
-    width: calc(100% / 12 * 8);
-  }
+  text-decoration: none;
+  color: #000;
 
-  .col-9 {
-    width: calc(100% / 12 * 9);
+  font-weight: 700;
+}
+.list-container ul li:nth-child(2) {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.page-info {
+  background: linear-gradient(to bottom, rgb(0, 225, 255), white);
+  padding: 15px;
+}
+.page-info p,
+.page-info em {
+  font-size: 18px;
+}
+
+.quote-container {
+  background: linear-gradient(to bottom, rgb(0, 225, 255), white);
+  padding: 0px 0px 30px 0px;
+}
+
+.plant-quote,
+.animal-quote,
+.landscape-quote {
+  padding: 10px;
+}
+
+.image-container {
+  height: 200px;
+}
+
+@media only screen and (max-width: 800px) {
+  .plant-quote,
+  .animal-quote,
+  .landscape-quote {
+    width: 100% !important;
+  }
+  p,
+  em {
+    font-size: 14px;
+  }
+  strong {
+    font-size: 16px;
   }
 }

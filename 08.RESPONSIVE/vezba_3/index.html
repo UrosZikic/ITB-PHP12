@@ -5,9 +5,93 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="query.css" />
     <title>Vezba 3</title>
   </head>
   <body>
-    <header></header>
+    <header class="row">
+      <p class="col-12 title">Dodir prirode</p>
+    </header>
+
+    <section class="row">
+      <div class="col-3 list-container">
+        <ul>
+          <li><a href="">Biljke</a></li>
+          <li><a href="">Zivotinje</a></li>
+          <li><a href="">Pejzazi</a></li>
+        </ul>
+      </div>
+
+      <div class="col-9 page-info">
+        <p>Podelite svoje fotografije prirode sa nama!</p>
+        <br />
+        <p>"Nema stvari koja bi bila tako vredna poucavanja kao priroda."</p>
+        <em>Nikola Tesla</em>
+      </div>
+    </section>
+
+    <section class="row image-container">
+      <div class="test col-4">
+        <picture>
+          <source media="(min-width:650px)" srcset="images/polar.avif" />
+          <source media="(min-width:465px)" srcset="images/pizza.jpg" />
+          <img
+            src="images/polar.avif"
+            alt="Flowers"
+            style="width: 100%; height: 200px"
+          />
+        </picture>
+      </div>
+      <div class="test col-4">
+        <picture>
+          <source media="(min-width:650px)" srcset="images/polar.avif" />
+          <source media="(min-width:465px)" srcset="images/pizza.jpg" />
+          <img
+            src="images/polar.avif"
+            alt="Flowers"
+            style="width: 100%; height: 200px"
+          />
+        </picture>
+      </div>
+      <div class="test col-4">
+        <picture>
+          <source media="(min-width:650px)" srcset="images/polar.avif" />
+          <source media="(min-width:465px)" srcset="images/pizza.jpg" />
+          <img
+            src="images/polar.avif"
+            alt="Flowers"
+            style="width: 100%; height: 200px"
+          />
+        </picture>
+      </div>
+    </section>
+
+    <section class="row quote-container">
+      <div class="col-3 plant-quote">
+        <strong>Biljke</strong>
+        <p>Sreca - to je biti sa prirodom, gledati je i s njom govoriti</p>
+        <em>L.N. Tolstoj</em>
+      </div>
+      <div class="col-4 animal-quote">
+        <strong>Zivotinje</strong>
+        <p>
+          Priroda je jedina knjiga koja na svim listovima nudi mnogo sadrzaja.
+        </p>
+        <em>Goethe</em>
+      </div>
+      <div class="col-5 landscape-quote">
+        <strong>Pejzazi</strong>
+        <p>
+          Priroda nam skriv svoje tajne jer je velicanstvena, a ne jer je
+          varalica. Zagledaj se duboko, duboko u prirodu, i tada ces sve bolje
+          razumjeti.
+        </p>
+        <em>Albert Einstein</em>
+      </div>
+    </section>
+
+    <footer class="row">
+      <p class="col-12 title">Dobrodosli na nas sajt!</p>
+    </footer>
   </body>
 </html>
