@@ -11,11 +11,16 @@ echo $rezultat;
 echo '<br>';
 // zadatak 2
 
-date_default_timezone_set('Europe/Belgrade');
+date_default_timezone_set('Europe/Berlin');
 $h2 = date('G');
 $m2 = date('i');
 echo 'Trenutno vreme je ' . $h2 . ' i ' . $m2;
 
 $rezultat2 = $h2 * 60 + $m2;
-echo $rezultat2;
+// echo $rezultat2;
+?>
+<!-- php cas 2 -->
+<?php 
+
+
 ?>
