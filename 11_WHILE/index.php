@@ -155,4 +155,64 @@
 //     }
 //   $n++;
 // }
+
+// drugi nacin 12.
+// $k = 6;
+// $i = 2;
+// $prost = true;
+// while ($i < $k) {
+//   if ($k % $i == 0) {
+//     $prost = false;
+//     break;
+//   } 
+// }
+
+// 13
+$i = 1;
+$b = 1;
+$d = 20;
+while ($i < 20) {
+  if ($b < 10000) {  
+  $b *= $d;
+} elseif ($b > 10000) {
+  break;
+}
+  $i++;
+  $d--;
+
+
+ 
+}
+echo "<p style='color:green;'>$d</p>";
+echo "<p style='color:red;'>$b</p>";
+
+//13. ispravka
+// $i = 20;
+// $pro = 1;
+// while ($i >= 1) {
+//   $pro = $pro * $i;
+//   if ($pro > 10000) {
+   
+//     break;
+//   }
+//   $i--;
+// }
+
+// echo "<p style='color:red;'>$i</p>";
+// echo "<p style='color:red;'>$pro</p>";
+
+// 14
+$a = 5;
+$b = 25;
+$i = 0;
+while ($a <= $b) {
+ $a *= $a;
+ $i++;
+if ($a > $b) {
+  echo "<p>broj je pomnozen samim sobom $i puta</p>";
+  echo "Greska";
+  break;
+}
+}
+
 ?>
