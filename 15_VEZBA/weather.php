@@ -150,4 +150,41 @@ function neuobicajenDan($dan)
 
 }
 // echo neuobicajenDan($dan);
+
+$test = [[1, 2], 3, 4];
+// function flatten($test)
+// {
+//   $result = [];
+//   foreach ($test as $element) {
+//     if (is_array($element)) {
+//       $result = array_merge($result, flatten($element));
+//     } else {
+//       array_push($result, $element);
+//     }
+//   }
+//   return $result;
+// }
+
+
+// print_r(flatten($test));
+
+function flatten($test)
+{
+  $result = [];
+  foreach ($test as $array) {
+    if (is_array($array)) {
+      foreach ($array as $element) {
+        array_push($result, $element);
+      }
+    } else {
+      array_push($result, $array);
+    }
+  }
+  return $result;
+}
+print_r(flatten($test));
+
+
+
+
 ?>
