@@ -1,0 +1,275 @@
+/* general styles */
+.error {
+  color: red;
+}
+.success {
+  color: green;
+}
+
+table {
+  /* border: 1px solid black; */
+  margin: 1rem;
+}
+th,td {
+  font-size: 2rem;
+  color: #fff;
+}
+body {
+  background: linear-gradient(to right, rgba(0, 117, 128, 1), rgb(57, 56, 56));
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: roboto, arial;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-Y: hidden;
+  height: 100%;
+}
+
+a:link, a:visited, a:hover {
+  color: rgb(0, 172, 215);
+  text-decoration: none !important;
+
+}
+div {
+  font-size: 2rem !important;
+}
+
+p {
+  font-size: 2rem!important;
+
+}
+/* index.php */
+
+/* navigation bar */
+.navbar{
+  font-size: 2rem;
+  background: linear-gradient(to right, rgba(0, 117, 128, 1), rgb(57, 56, 56));
+
+}
+.navbar a, .navbar-toggler {
+  color: #fff !important;
+}
+
+.navbar-brand--font-size {
+  font-size: 3rem !important;
+ 
+}
+/* --- */
+
+/* header */
+.page-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100rem;
+}
+
+.header-image {
+  background-image: url("images/header.jpg");
+  width: calc(100% / 12 * 7);
+  background-size: 100% 100%;
+}
+
+#index-container {
+  text-align: center;
+  font-size: 2rem; /* 550px.width = 1.4rem, 400px.width 1rem */
+  padding: 10rem 0rem;
+  background: linear-gradient(to bottom, rgba(0, 117, 128, 1), rgb(57, 56, 56), rgb(57, 56, 56));
+  width: calc(100% / 12 * 5);
+ 
+}
+#index-container h1 {
+font-size: 4rem;
+}
+
+#index-container p {
+  margin: 1rem 0rem;
+  text-align: center !important;
+  color: white !important;
+}
+
+
+/* --- */
+
+/* followers */
+.profile-image {
+  width: 4rem !important;
+  height: 4rem !important;
+  border-radius: 50%;
+}
+ion-icon {
+  font-size: 4rem;
+}
+.followers-info {
+  text-align: center;
+  /* border-collapse: collapse; */
+  padding: 2rem;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  margin: 5rem auto;
+  border-radius: 1rem;
+}
+.followers-info tr td, .followers-info th {
+  /* border: 2px solid black; */
+
+  padding: 1rem 3rem;
+}
+
+.followers-header {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.followers-link {
+  text-align: center;
+}
+
+
+/* xx */
+
+/* login */
+.login-container {
+  margin: 5rem 0rem;
+  color: #fff;
+  width: 100%;
+
+
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+}
+.login-container input[type="submit"] {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  color: rgb(0, 114, 143);
+  border: none;
+}
+.login-container input[type="text"], .login-container input[type="password"] {
+  padding: 0.5rem;
+  outline: none;
+  border-radius: 0.2rem;
+  border: none;
+}
+.login-message {
+  color: #fff;
+  text-align: center;
+}
+.login-container form {
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+  padding: 2rem;
+}
+
+/* xx */
+
+/* register */
+.register-container {
+
+  text-align: center;
+}
+.register-container form {
+
+  padding: 2rem 0rem;
+}
+.register-container form label {
+  width: 20rem;
+  color: #fff;
+}
+.register-container form input[type="submit"] {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: rgb(0, 65, 82);
+  border: none;
+  border-radius: 0.2rem;
+}
+.register-container form input[type="text"], .register-container form input[type="password"] {
+  padding: 0.5rem;
+  outline: none;
+  border-radius: 0.2rem;
+  border: none;
+}
+.register-container h1 {
+  color: #fff;
+}
+
+/* xx */
+
+
+/* profile */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  display: none;
+  padding: 0rem 2rem;
+}
+.profile-container form {
+  padding: 2rem 0rem;
+}
+
+.profile-container form label {
+ width: 15rem;
+}
+.profile-container form input {
+  padding: 0.5rem;
+  outline: none;
+  border-radius: 0.2rem;
+  border: none;
+}
+
+.profile-container form input[type="submit"] {
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  color: rgb(0, 65, 82);
+  border: none;
+  border-radius: 0.2rem;
+}
+
+.profile-details {
+  padding: 2rem;
+  color: #fff;
+}
+.profile-details--container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.edit-profile--image {
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  background-color: #fff;
+  border: none;
+  color: rgb(0, 65, 82);
+  margin-left: 2rem;
+  border-radius: 1rem;
+}
+
+.myfollowerslist {
+  color: #fff;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  display: none;
+  margin: 1rem;
+}
+ .myfollowerslist span {
+  width: 10rem;
+}
+#connections-following {
+  padding: 2rem !important;
+  color: #fff;
+  font-weight: 500;
+  display: none;
+}
+
+/* xx */

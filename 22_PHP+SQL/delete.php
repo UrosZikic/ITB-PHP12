@@ -4,17 +4,21 @@ require_once 'connection.php';
 $id = "";
 if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
   $id = $_GET['id'];
+  //mozete da izvadite dodatne podatke o studentu i prikazete ga pre brisanja
 }
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $id = $_POST['id'];
-  $q = "DELETE FROM `studenti` WHERE `id` =" . $id . "; ";
+
+  $q = "DELETE FROM `studenti` WHERE `id`=" . $id . ";";
   $r = $conn->query($q);
   if ($r) {
-    header("Location: index.php");
+    //uspesno obrisan student, prebaci ga na index.php
+    header("location: index.php");
     exit();
+  } else {
+    //doslo je do greske
+    echo "<p>DOSLO JE DO GRESKE</p>";
   }
-
 }
 
 ?>
