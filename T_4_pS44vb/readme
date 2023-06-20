@@ -1,0 +1,12 @@
+This is a mock Social Media website project I've created in the IT Bootcamp course.
+Technologies used are: HTML, CSS, PHP, MYSQL, BOOSTRAP AND JAVASCRIPT.
+Project is not complete and will receive updates
+
+Current functionalities are:
+1. register account
+2. log in/log out
+3. create/edit user profile
+4. follow other users
+5. reset password
+
+Index.php is the main file! open it in the browser and test the website! :)
