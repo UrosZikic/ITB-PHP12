@@ -7,52 +7,6 @@ if (empty($_SESSION["id"])) {
 $id = $_SESSION["id"];
 require_once "connection.php";
 
-
-if (isset($_GET['friend_id'])) {
-  // request to follow another user
-  $friendId = $conn->real_escape_string($_GET["friend_id"]);
-
-  $q = "SELECT * FROM `followers` 
-      WHERE `id_sender` = $id
-      AND `id_receiver` = $friendId";
-
-  $result = $conn->query($q);
-  if ($result->num_rows == 0) {
-    $upit = "INSERT INTO `followers` (`id_sender`,`id_receiver`) 
-           VALUE ($id, $friendId)";
-    $result1 = $conn->query($upit);
-  }
-}
-
-if (isset($_GET['unfriend_id'])) {
-  // request to unfollow another user
-  $friendId = $conn->real_escape_string($_GET["unfriend_id"]);
-
-  $q = "DELETE FROM `followers` WHERE
-  `id_sender` = $id AND
-  `id_receiver` = $friendId;
-";
-  $conn->query($q);
-}
-
-// which users does loged in user follow
-$upit1 = "SELECT `id_receiver` FROM `followers` WHERE `id_sender` = $id";
-$res1 = $conn->query($upit1);
-$niz1 = array();
-while ($row = $res1->fetch_array((MYSQLI_NUM))) {
-  $niz1[] = $row[0];
-  // var_dump($niz1);
-  // echo "<br>";
-}
-// set which users follow the logged in user
-$upit2 = "SELECT `id_sender` FROM `followers` WHERE `id_receiver` = $id";
-$res2 = $conn->query($upit2);
-$niz2 = array();
-while ($row = $res2->fetch_array((MYSQLI_NUM))) {
-  $niz2[] = $row[0];
-  // var_dump($niz2);
-}
-
 ?>
 
 
@@ -113,30 +67,17 @@ while ($row = $res2->fetch_array((MYSQLI_NUM))) {
       echo "</td><td>";
       // links for follow functionality
       $friendId = $row["id"];
-      // sa casa 
-      if (!in_array($friendId, $niz1)) {
-        if (!in_array($friendId, $niz2)) {
-          $text = "Follow";
-        } else {
-          $text = "Follow back";
-        }
-        echo "<a href='followers.php?friend_id=$friendId'>$text</a>";
-      } else {
-        echo "<a href='followers.php?unfriend_id=$friendId'>Unfollow</a>";
-      }
-      // end sa casa
       // follow || unfollow
-      // moj kod - deprecated 
-      // $followQuery = "SELECT `id` FROM `followers`
-      //                 WHERE `id_sender` = $id
-      //                 AND `id_receiver` = $friendId
-      // ;";
-      // $followQueryExecute = $conn->query($followQuery);
-      // if ($followQueryExecute->num_rows == 0) {
-      //   echo "<a href='followers.php?friend_id=$friendId'>Follow</a>";
-      // } else {
-      //   echo "<a href='followers.php?unfriend_id=$friendId'>Unfollow</a>";
-      // }
+      $followQuery = "SELECT `id` FROM `followers`
+                      WHERE `id_sender` = $id
+                      AND `id_receiver` = $friendId
+      ;";
+      $followQueryExecute = $conn->query($followQuery);
+      if ($followQueryExecute->num_rows == 0) {
+        echo "<a href='follow.php?friend_id=$friendId'>Follow</a>";
+      } else {
+        echo "<a href='unfollow.php?friend_id=$friendId'>Unfollow</a>";
+      }
       echo "</td></tr>";
       // end
     }

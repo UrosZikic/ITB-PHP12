@@ -18,6 +18,25 @@ function usernameValidation($u, $c)
   }
 }
 
+function oldPassValidation($u, $id, $c)
+{
+  $query = "SELECT * FROM `users` WHERE AND `id` = '$id'";
+  $result = $c->query($query);
+  if ($result && $result->num_rows > 0) {
+    $row = $result->fetch_assoc();
+    $hashedPass = $row['password'];
+
+    if (password_verify($u, $hashedPass)) {
+      return "";
+    } else {
+      echo "Password is incorrect!";
+    }
+  } else {
+    echo "User not found!";
+  }
+
+}
+
 function passwordValidation($u)
 {
   if (empty($u)) {

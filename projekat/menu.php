@@ -48,7 +48,9 @@ require_once "connection.php";
           <li class="nav-item">
             <a class="nav-link font-black" href="logout.php">Sign out</a>
           </li>
-
+          <li>
+            <a href="reset_password.php" class="nav-link font-black">Reset Password</a>
+          </li>
         <?php }
         ; ?>
       </ul>

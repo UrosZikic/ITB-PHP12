@@ -66,6 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
+
     if ($conn->query($q)) {
       if ($profileRow !== false) {
         $successMessage = " You have edited your profile";
@@ -105,30 +106,34 @@ $row = $executeRPD->fetch_assoc();
     <p>User profile details:</p>
     <div class="profile-details--container">
       <?php
-      if (strlen($row['profile_image']) != 0) {
-        echo "<img src='profile_images/" . $row['profile_image'] . "' alt='profile image'  class='profile-image'>";
-      } elseif ($row['gender'] == "m") {
-        $src = "man-outline";
-        echo "<ion-icon name= '" . $src . "'></ion-icon>";
-      } elseif ($row['gender'] == "f") {
-        $src = "woman-outline";
-        echo "<ion-icon name= '" . $src . "'></ion-icon>";
-      } else {
-        $src = "person-outline";
-        echo "<ion-icon name= '" . $src . "'></ion-icon>";
-      }
-      ?>
-      <span style="vertical-align:middle;">
-        <?php echo $row['name'] ?>
-      </span>
+      $profileInfoQuery = "SELECT * FROM `profiles` WHERE `user_id` = $id;";
+      $exeProfileInfoQuery = $conn->query($profileInfoQuery);
+      if ($exeProfileInfoQuery->num_rows > 0) {
+        if (strlen($row['profile_image']) != 0) {
+          echo "<img src='profile_images/" . $row['profile_image'] . "' alt='profile image'  class='profile-image'>";
+        } elseif ($row['gender'] == "m") {
+          $src = "man-outline";
+          echo "<ion-icon name= '" . $src . "'></ion-icon>";
+        } elseif ($row['gender'] == "f") {
+          $src = "woman-outline";
+          echo "<ion-icon name= '" . $src . "'></ion-icon>";
+        } else {
+          $src = "person-outline";
+          echo "<ion-icon name= '" . $src . "'></ion-icon>";
+        }
+        ?>
+        <span style="vertical-align:middle;">
+          <?php echo $row['name'] ?>
+        </span>
+      </div>
+      <p>Gender:
+        <?php echo $row['gender'] ?>
+      </p>
+      <p>Birthday:
+        <?php echo $row['dob'] ?>
+      </p>
     </div>
-    <p>Gender:
-      <?php echo $row['gender'] ?>
-    </p>
-    <p>Birthday:
-      <?php echo $row['dob'] ?>
-    </p>
-  </div>
+  <?php } ?>
   <button onclick="following()" class="edit-profile--image">People you follow</button>
   <button onclick="editProfile()" class="edit-profile--image">Edit Profile</button>
 

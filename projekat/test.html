@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+    
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello <span class="username"></span></h1>
+
+  <form action="">
+    <input type="name" class="name">
+  </form>
+  <button class="submit" onclick="x()">submit</button>
+  <script>
+document.addEventListener('keydown', function (event) {
+  if (event.key === 'Enter') {
+    event.preventDefault();
+    x();
+  }
+});
+    function x() {
+   
+    var name = document.querySelector('.name').value;
+      console.log(validateName(name));
+      document.querySelector('.username').innerHTML = validateName(name);
+    }
+    function validateName(name) {
+      const hasSpecialCharacters = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/.test(name);
+
+      if (name.length == 0) {
+        return "Name can't by blank";
+      } else if(/\d/.test(name)) {
+        return "Name can't contain numbers";
+      } else if(hasSpecialCharacters) {
+        return "Name can't contain special characters"
+      } else {
+        return name;
+      }
+    }
+
+
+// --------------------------------------
+    const obj1 = {
+    x: function(par1, par2) {
+        return par1 + par2;
+      }
+    }
+    // calling from object
+  console.log(obj1.x(1, 2));
+    // FUNCTIONAL PROGRAMMING
+
+  //CALL  
+  let execute = obj1.x;
+  console.log(execute.call(obj1, 2, 2));
+  // apply
+  const apply = [3, 3];
+  console.log(execute.apply(obj1, apply));
+  // bind
+  const bindMode = obj1.x;
+  const executeBind = bindMode.bind(obj1);
+  console.log(executeBind(4, 4));
+
+  // MAP, FILTER, REDUCE
+  const arr1 = [2, 4, 6, 8, 10];
+  // map
+  let exeMap = arr1.map((val) => val * 2);
+  console.log(exeMap);
+  //filter
+  let exeFilter = arr1.filter((val) => val > 5);
+  console.log(exeFilter);
+  //reduce
+  let exeReduce = arr1.reduce((acc, cur) => (acc + cur), 0);
+  console.log(exeReduce);
+
+  // FUNCTIONS RETURNING FUNCTIONS
+  function returner() {
+   console.log("I have returned");
+  }
+  
+  function caller() {
+    returner();
+  }
+  caller();
+
+  // store function in a variables
+  function storage() {
+    return "package unloaded";
+  }
+  const unpack = storage;
+  console.log(unpack());
+//  passing functions as parameters
+function load() {
+  return 10;
+}
+function loader(load) {
+  return load;
+}
+console.log(loader(load()));
+
+
+// Creating a new map
+const map = new Map();
+
+// Adding entries to the map
+map.set("name", "John");
+map.set("age", 30);
+map.set("isStudent", false);
+
+console.log(map.get("name"));
+for(const[key, value] of map) {
+  console.log(key);
+  console.log(value);
+}
+console.log("-----------------");
+for(const entry of map.entries()) {
+  console.log(entry);
+}
+for(const value of map.values()) {
+  console.log(value);
+}
+for(const key of map.keys()) {
+  console.log(key);
+}
+for(const [key, value] of map.entries()) {
+  console.log(key + ": " + value);
+}
+const unpackMap = map.forEach((value, key) => console.log(value))
+</script>
+</body>
+</html>
