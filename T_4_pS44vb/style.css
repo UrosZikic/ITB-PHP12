@@ -12,7 +12,7 @@ table {
 }
 th,td {
   font-size: 2rem;
-  color: #fff;
+  /* color: #fff; */
 }
 body {
   background: linear-gradient(to right, rgba(0, 117, 128, 1), rgb(57, 56, 56));
@@ -114,6 +114,7 @@ ion-icon {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
   margin: 5rem auto;
   border-radius: 1rem;
+  color: #fff;
 }
 .followers-info tr td, .followers-info th {
   /* border: 2px solid black; */
@@ -271,7 +272,26 @@ ion-icon {
   font-weight: 500;
   display: none;
 }
-
+/* more profile */
+.bio {
+  padding: 5rem 0rem  !important;
+}
 /* xx */
 
-
+/* show_profile stilovi*/
+.profile-table {
+  border-collapse: collapse;
+}
+.profile-table tr td {
+  border: 1px solid #fff;
+  padding: 1rem;
+}
+.m {
+  color: blue;
+}
+.f {
+  color: pink !important;
+}
+.o {
+  color: gray;
+}

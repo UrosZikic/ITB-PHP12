@@ -106,10 +106,21 @@ while ($row = $res2->fetch_array((MYSQLI_NUM))) {
       }
       echo "</td><td>";
       if ($row["full_name"] !== NULL) {
-        echo $row["full_name"];
-      } else {
-        echo $row["username"];
-      }
+        ?>
+        <!-- salje id korisnika u show_profile -->
+        <a href="show_profile.php?p=<?php echo $row['id'] ?>">
+          <?php echo $row["full_name"];
+          ?>
+        </a>
+
+        <?php
+      } else { ?>
+        <a href="show_profile.php?p=<?php echo $row['id'] ?>">
+          <?php echo $row["username"]; ?>
+        </a>
+      <?php }
+      ?>
+      <?php
       echo "</td><td>";
       // links for follow functionality
       $friendId = $row["id"];

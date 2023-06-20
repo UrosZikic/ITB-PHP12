@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $lastName = $conn->real_escape_string($_POST["last_name"]);
   $dob = $conn->real_escape_string($_POST["dob"]);
   $gender = $conn->real_escape_string($_POST["gender"]);
+  $bio = $conn->real_escape_string($_POST["bio"]);
   // ATTACH IMAGE NAME TO THE VARIABLE
   $image = $_FILES["profileImage"];
   $image_name = $image["name"];
@@ -46,11 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // this logic provides either a create or update profile functionality
     //check validation.php to see profileExists
 
-    $q = "";
+    // $q = "";
     if ($profileRow === false) {
 
-      $q = "INSERT INTO `profiles`(`first_name`,`last_name`,`gender`,`dob`, `user_id`, `profile_image`) 
-      VALUE ('$firstName', '$lastName', '$gender', '$dob', $id, '$image_name');
+      $q = "INSERT INTO `profiles`(`first_name`,`last_name`,`gender`,`dob`, `user_id`, `profile_image`, `bio`) 
+      VALUE ('$firstName', '$lastName', '$gender', '$dob', $id, '$image_name', '$bio);
       ";
     } else {
       $q = "UPDATE `profiles` 
@@ -59,7 +60,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        `last_name` = '$lastName',
        `gender` = '$gender',
        `dob` = '$dob',
-       `profile_image` = '$image_name'
+       `profile_image` = '$image_name',
+       `bio` = '$bio'
        WHERE `user_id` = $id;
        ";
 
@@ -81,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // extract profile details
-$readProfileDetails = "SELECT concat(`first_name`, ' ', `last_name`) AS `name`, `gender`, `dob`, `profile_image` FROM `profiles` WHERE `user_id` = $id";
+$readProfileDetails = "SELECT concat(`first_name`, ' ', `last_name`) AS `name`, `gender`, `dob`, `profile_image`, `bio` FROM `profiles` WHERE `user_id` = $id";
 $executeRPD = $conn->query($readProfileDetails);
 $row = $executeRPD->fetch_assoc();
 
@@ -101,7 +103,7 @@ $row = $executeRPD->fetch_assoc();
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="overflow: ;">
+<body>
   <div class="profile-details">
     <p>User profile details:</p>
     <div class="profile-details--container">
@@ -131,6 +133,10 @@ $row = $executeRPD->fetch_assoc();
       </p>
       <p>Birthday:
         <?php echo $row['dob'] ?>
+      </p>
+      <p>
+        Bio:
+        <?php echo $row['bio']; ?>
       </p>
     </div>
   <?php } ?>
@@ -236,7 +242,12 @@ WHERE `followers`.`id_sender` = $id;
           $poruka = "Edit profile";
         }
         ?>
-        <input type="submit" value="<?php echo ($profileRow === false) ? 'Create profile' : 'Edit profile'; ?>">
+        <!-- dodajem polje BIO -->
+      <p>
+        <label for="bio">Biography:</label>
+        <input type="textarea" name="bio" class="bio">
+      </p>
+      <input type="submit" value="<?php echo ($profileRow === false) ? 'Create profile' : 'Edit profile'; ?>">
       </p>
     </form>
     <p>
