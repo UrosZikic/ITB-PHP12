@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST['submit'])) {
-  $x = $_POST['username'];
+  $x = $_POST['test'];
   echo $x;
 }
 
@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 
 <body>
   <form action="#" method="post">
-    <input type="text" name="username" id="username">
+    <input type="text" name="test" id="username">
     <input type="submit" name="submit">
   </form>
 </body>
