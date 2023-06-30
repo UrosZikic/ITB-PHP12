@@ -10,13 +10,14 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('genres', function (Blueprint $table) {
+        Schema::create('films', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable(false)->unique();
-            $table->smallInteger('year', false, true)->nullable(false);
+            $table->string('name')->nullable(false);
+            $table->smallInteger('year', false, true);
             $table->smallInteger('running_h', false, true)->nullable(true);
             $table->smallInteger('running_m', false, true)->nullable(true);
             $table->decimal('rating', 3, 1, true)->nullable(true);
+
             $table->timestamps();
         });
     }
