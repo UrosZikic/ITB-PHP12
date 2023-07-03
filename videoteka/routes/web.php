@@ -2,7 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\App;
+// use Illuminate\Support\Facades\App;
+use App\Http\Controllers\GenreController;
+use App\Http\Controllers\PersonController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,13 +17,15 @@ use Illuminate\Support\Facades\App;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/lang/{locale}', function (string $locale) {
-    App::setLocale($locale);
-    session(['locale' => $locale]);
-    // povratak na prethodnu stranu
-    return redirect()->back();
 
+Route::get('/lang/{locale}', function (string $locale) {
+    // App::setLocale($locale);
+    session(['locale' => $locale]);
+
+    //povratak na prethodnu stranicu
+    return redirect()->back();
 })->whereIn('locale', ['en', 'sr'])->name('lang');
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,6 +39,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    //prikaz svih podataka
+    Route::get('/genre', [GenreController::class, 'index'])
+        ->name('genre.index');
+    Route::get('/person', [PersonController::class, 'index'])
+        ->name('person.index');
+
+
+
 });
 
 require __DIR__ . '/auth.php';
@@ -43,6 +57,5 @@ Auth::routes([
     'reset' => false,
     'verify' => false
 ]);
-
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
