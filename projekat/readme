@@ -1,12 +1,62 @@
-This is a mock Social Media website project I've created in the IT Bootcamp course.
-Technologies used are: HTML, CSS, PHP, MYSQL, BOOSTRAP AND JAVASCRIPT.
-Project is not complete and will receive updates
+Mock Social Media Website
 
-Current functionalities are:
-1. register account
-2. log in/log out
-3. create/edit user profile
-4. follow other users
-5. reset password
 
-Index.php is the main file! open it in the browser and test the website! :)
+This is a mock Social Media website project created as part of an IT Bootcamp course. The project utilizes a variety of technologies, including HTML, CSS, PHP, MySQL, Bootstrap, and JavaScript.
+
+
+Technologies Used
+HTML
+CSS
+PHP
+MySQL
+Bootstrap
+JavaScript
+
+Current Functionalities
+The mock Social Media website project currently offers the following functionalities:
+
+Register Account:
+
+Users can create an account by providing necessary information.
+Log In/Log Out:
+
+Registered users can log in and out of their accounts.
+Create/Edit User Profile:
+
+Users can create and edit their profiles with personal information, profile pictures, and more.
+Follow Other Users:
+
+Users can follow other users to stay updated with their posts and activities.
+Reset Password:
+
+A password reset feature is available for users who forget their passwords.
+Getting Started
+To test the mock Social Media website project, follow these steps:
+
+Clone the Repository:
+
+git clone https://github.com/UrosZikic/ITB-PHP12/tree/main/projekat
+
+Start a Local Web Server:
+
+Ensure you have a local web server environment (e.g., XAMPP, WAMP) set up with PHP and MySQL support.
+Configure the server to point to the project directory.
+Import the Database:
+
+Import the provided MySQL database schema file (database.sql) into your MySQL server to create the necessary tables.
+Configuration:
+
+Configure your database connection settings in the PHP files as needed (e.g., config.php).
+Run the Website:
+
+Open index.php in your web browser to access the main page.
+Register an account, log in, and explore the website's functionalities.
+Usage
+Once the website is running, you can:
+
+Register a new account.
+Log in to your account.
+Create and edit your user profile.
+Follow other users.
+Reset your password if needed.
+Interact with other users and explore the mock Social Media platform.
